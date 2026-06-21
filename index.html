@@ -7,16 +7,18 @@
 
   <style>
     :root {
-      --bg: #120d0a;
-      --bg-soft: #211610;
-      --card: rgba(255, 248, 236, 0.08);
-      --card-strong: rgba(255, 248, 236, 0.14);
-      --text: #fff7ea;
-      --muted: #d6c1a9;
-      --accent: #e3a85f;
-      --accent-2: #7fc6b4;
-      --border: rgba(255, 255, 255, 0.14);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --bg: #fff5ea;
+      --bg-soft: #ffe4d6;
+      --card: rgba(255, 255, 255, 0.66);
+      --card-strong: rgba(255, 255, 255, 0.88);
+      --text: #3e2a2f;
+      --muted: #7d5d62;
+      --accent: #ff8fb1;
+      --accent-2: #37bfb3;
+      --accent-3: #ffd166;
+      --coral: #ff8a65;
+      --border: rgba(120, 70, 80, 0.18);
+      --shadow: 0 22px 65px rgba(179, 91, 112, 0.22);
     }
 
     * {
@@ -28,11 +30,13 @@
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
       background:
-        radial-gradient(circle at top left, rgba(127, 198, 180, 0.18), transparent 32%),
-        radial-gradient(circle at top right, rgba(227, 168, 95, 0.18), transparent 34%),
-        linear-gradient(135deg, #120d0a 0%, #26170f 45%, #111 100%);
+        radial-gradient(circle at top left, rgba(255, 209, 102, 0.48), transparent 34%),
+        radial-gradient(circle at top right, rgba(55, 191, 179, 0.34), transparent 33%),
+        radial-gradient(circle at 50% 12%, rgba(255, 143, 177, 0.34), transparent 38%),
+        linear-gradient(135deg, #fff8ee 0%, #ffe2d6 45%, #dff8f3 100%);
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     a {
@@ -49,8 +53,8 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(14px);
-      background: rgba(18, 13, 10, 0.72);
+      backdrop-filter: blur(16px);
+      background: rgba(255, 248, 238, 0.74);
       border-bottom: 1px solid var(--border);
     }
 
@@ -69,7 +73,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: bold;
-      color: var(--accent);
+      color: #d84f81;
       white-space: nowrap;
     }
 
@@ -81,7 +85,7 @@
     }
 
     .nav-links a:hover {
-      color: var(--text);
+      color: #d84f81;
     }
 
     .hero {
@@ -95,11 +99,12 @@
     }
 
     .eyebrow {
-      color: var(--accent-2);
+      color: #008f86;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       font-size: 13px;
       margin-bottom: 12px;
+      font-weight: bold;
     }
 
     h1 {
@@ -107,13 +112,8 @@
       line-height: 0.92;
       margin: 0 0 22px;
       letter-spacing: -0.06em;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 28px;
+      color: #3f2631;
+      text-shadow: 0 6px 24px rgba(255, 143, 177, 0.22);
     }
 
     .buttons {
@@ -129,15 +129,16 @@
       padding: 13px 18px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: var(--card);
+      background: rgba(255, 255, 255, 0.62);
       color: var(--text);
       font-size: 15px;
       transition: 0.2s ease;
+      box-shadow: 0 8px 20px rgba(179, 91, 112, 0.10);
     }
 
     .button.primary {
-      background: linear-gradient(135deg, var(--accent), #c76f3a);
-      color: #160c05;
+      background: linear-gradient(135deg, #ff8fb1, #ffd166);
+      color: #3f2631;
       border: none;
       font-weight: bold;
     }
@@ -145,23 +146,26 @@
     .button:hover {
       transform: translateY(-2px);
       background: var(--card-strong);
+      box-shadow: 0 12px 28px rgba(179, 91, 112, 0.18);
     }
 
     .album-card {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 235, 225, 0.68));
+      border: 1px solid rgba(255, 255, 255, 0.74);
       padding: 16px;
-      border-radius: 28px;
+      border-radius: 30px;
       box-shadow: var(--shadow);
       transform: rotate(1deg);
     }
 
     .album-cover {
-      border-radius: 20px;
+      border-radius: 22px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.86);
+      box-shadow: 0 14px 35px rgba(88, 55, 52, 0.18);
     }
 
     .album-caption {
@@ -170,7 +174,8 @@
 
     .album-caption h2 {
       margin: 0;
-      font-size: 24px;
+      font-size: 26px;
+      color: #d84f81;
     }
 
     .album-caption p {
@@ -188,40 +193,9 @@
     .section-title {
       font-size: clamp(32px, 5vw, 52px);
       line-height: 1;
-      margin: 0 0 18px;
+      margin: 0 0 24px;
       letter-spacing: -0.04em;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      max-width: 720px;
-      font-size: 18px;
-      margin-bottom: 28px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--accent);
-      font-size: 22px;
-    }
-
-    .card p {
-      color: var(--muted);
-      margin-bottom: 0;
+      color: #3f2631;
     }
 
     .tracks {
@@ -230,10 +204,12 @@
     }
 
     .track {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid var(--border);
-      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.74), rgba(255,238,229,0.70));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 24px;
       padding: 18px;
+      box-shadow: 0 14px 35px rgba(179, 91, 112, 0.13);
     }
 
     .track-top {
@@ -251,11 +227,12 @@
     }
 
     .track-tag {
-      color: var(--accent-2);
+      color: #008f86;
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       white-space: nowrap;
+      font-weight: bold;
     }
 
     audio {
@@ -273,12 +250,15 @@
       grid-template-columns: 110px 1fr auto;
       gap: 18px;
       align-items: center;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.60);
+      box-shadow: 0 12px 30px rgba(179, 91, 112, 0.10);
     }
 
     .date {
-      color: var(--accent);
+      color: #d84f81;
       font-weight: bold;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -287,6 +267,7 @@
     .show strong {
       display: block;
       font-size: 18px;
+      color: var(--text);
     }
 
     .show span {
@@ -295,10 +276,11 @@
 
     .contact-box {
       background:
-        linear-gradient(135deg, rgba(227,168,95,0.18), rgba(127,198,180,0.12)),
-        var(--card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
+        radial-gradient(circle at top left, rgba(255, 209, 102, 0.56), transparent 36%),
+        linear-gradient(135deg, rgba(255, 143, 177, 0.36), rgba(55, 191, 179, 0.24)),
+        rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 30px;
       padding: 32px;
       text-align: center;
       box-shadow: var(--shadow);
@@ -307,6 +289,10 @@
     .contact-box p {
       color: var(--muted);
       font-size: 18px;
+    }
+
+    .contact-box strong {
+      color: #3f2631;
     }
 
     footer {
@@ -334,10 +320,6 @@
         gap: 12px;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
       .show {
         grid-template-columns: 1fr;
         gap: 6px;
@@ -356,7 +338,6 @@
       <a class="logo" href="#">Ellie and the Kronogns</a>
       <div class="nav-links">
         <a href="#music">Music</a>
-        <a href="#story">Story</a>
         <a href="#shows">Shows</a>
         <a href="#contact">Contact</a>
       </div>
@@ -387,10 +368,6 @@
 
     <section id="music">
       <h2 class="section-title">Demos & Samples</h2>
-      <p class="section-intro">
-        Add your audio files to this same GitHub folder and rename them to match the filenames below.
-        The players will become clickable on the live site.
-      </p>
 
       <div class="tracks">
         <div class="track">
@@ -428,46 +405,8 @@
       </div>
     </section>
 
-    <section id="story">
-      <h2 class="section-title">The Story</h2>
-      <p class="section-intro">
-        Ellie and the Kronogns started as a half-serious porch project and accidentally became
-        something with a name, a sound, and a suspicious amount of emotional sincerity.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>The Sound</h3>
-          <p>
-            Acoustic-first songs with folk, indie, and beach-house energy. Think handwritten notes,
-            warm strings, late-night jokes, and melodies that refuse to leave.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>The Debut</h3>
-          <p>
-            The first album, <em>Sweet Baby Jake Goes to Sandy Toes</em>, captures the spirit of
-            family chaos, vacation weather, and little memories that somehow become anthems.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>The Vibe</h3>
-          <p>
-            Semi-professional, fully unserious when needed, and always trying to sound like a real
-            band even when the dog is walking through the recording.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <section id="shows">
       <h2 class="section-title">Shows</h2>
-      <p class="section-intro">
-        Totally real-looking mock dates. Replace these with actual shows, backyard sessions, or
-        living room premieres whenever you want.
-      </p>
 
       <div class="show-list">
         <div class="show">
